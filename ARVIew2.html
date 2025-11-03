@@ -9,14 +9,10 @@
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
       
-      <!-- Assets -->
+      <!-- Assets: Chỉ giữ images, bỏ video -->
       <a-assets>
-        <!-- Images -->
         <img id="card1" src="https://raw.githubusercontent.com/Mamazola182/ARwebsite/refs/heads/main/ar1.jfif" />
         <img id="card2" src="https://raw.githubusercontent.com/Mamazola182/ARwebsite/refs/heads/main/ar2.jfif" />
-        <!-- Videos -->
-        <video id="video1" src="https://www.youtube.com/watch?v=tleMlKHO-ag" loop autoplay muted playsinline></video>
-        <video id="video2" src="https://www.youtube.com/watch?v=usHvekMPlYs" loop autoplay muted playsinline></video>
       </a-assets>
 
       <!-- Camera -->
@@ -24,14 +20,36 @@
 
       <!-- Target 0 -->
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-plane src="#card1" position="0 0 0" height="0.5" width="0.9"></a-plane>
-        <a-video src="#video1" position="0 0 0.1" width="0.9" height="0.5"></a-video>
+        <a-plane src="#card1" position="0 0 0" height="0.5" width="0.9" rotation="0 0 0" scale="1 1 1"></a-plane>
+        
+        <!-- Embed YouTube video 1 -->
+        <a-entity position="0 0 0.1" scale="1 1 1">
+          <iframe 
+            width="0.9" 
+            height="0.5" 
+            src="https://www.youtube.com/embed/tleMlKHO-ag?autoplay=1&mute=1&loop=1&playlist=tleMlKHO-ag" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </a-entity>
       </a-entity>
 
       <!-- Target 1 -->
       <a-entity mindar-image-target="targetIndex: 1">
-        <a-plane src="#card2" position="0 0 0" height="0.5" width="0.9"></a-plane>
-        <a-video src="#video2" position="0 0 0.1" width="0.9" height="0.5"></a-video>
+        <a-plane src="#card2" position="0 0 0" height="0.5" width="0.9" rotation="0 0 0" scale="1 1 1"></a-plane>
+        
+        <!-- Embed YouTube video 2 -->
+        <a-entity position="0 0 0.1" scale="1 1 1">
+          <iframe 
+            width="0.9" 
+            height="0.5" 
+            src="https://www.youtube.com/embed/usHvekMPlYs?autoplay=1&mute=1&loop=1&playlist=usHvekMPlYs" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </a-entity>
       </a-entity>
 
     </a-scene>
